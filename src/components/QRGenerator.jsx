@@ -253,7 +253,7 @@ const QRGenerator = () => {
                   <p>Tracking ID: {qrData.trackingId}</p>
                   {imagePath && (
                     <p className="text-muted">
-                      <small>Qr Code Saved at</small>
+                      <small>Qr Code Saved</small>
                     </p>
                   )}
                   <Link 
