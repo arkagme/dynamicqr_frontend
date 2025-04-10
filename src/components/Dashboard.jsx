@@ -114,19 +114,19 @@ const Dashboard = () => {
               <div className="row text-center">
                 <div className="col-md-4">
                   <div className="p-3 border rounded mb-3">
-                    <h2 className="text-primary">{analytics.stats.total_scans}</h2>
+                    <h2 className="text-primary">{analytics.stats.get_qr_analytics.total_scans}</h2>
                     <p className="mb-0">Total Scans</p>
                   </div>
                 </div>
                 <div className="col-md-4">
                   <div className="p-3 border rounded mb-3">
-                    <h2 className="text-success">{analytics.stats.unique_visitors}</h2>
+                    <h2 className="text-success">{analytics.stats.get_qr_analytics.unique_visitors}</h2>
                     <p className="mb-0">Unique Visitors</p>
                   </div>
                 </div>
                 <div className="col-md-4">
                   <div className="p-3 border rounded mb-3">
-                    <h2 className="text-info">{analytics.stats.last_scan ? new Date(analytics.stats.last_scan).toLocaleDateString() : 'N/A'}</h2>
+                    <h2 className="text-info">{analytics.stats.get_qr_analytics.last_scan ? new Date(analytics.stats.last_scan).toLocaleDateString() : 'N/A'}</h2>
                     <p className="mb-0">Last Scan</p>
                   </div>
                 </div>
