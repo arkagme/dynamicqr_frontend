@@ -1,13 +1,23 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import axios from 'axios';
-const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL ||  '/api';
 
 const Dashboard = () => {
   const { id } = useParams();
   const [loading, setLoading] = useState(true);
   const [analytics, setAnalytics] = useState(null);
   const [error, setError] = useState(null);
+
+  const formatDate = (dateString) => {
+    if (!dateString) return 'N/A';
+    try {
+      return new Date(dateString).toLocaleString();
+    } catch (err) {
+      console.error("Date formatting error:", err);
+      return 'Invalid date';
+    }
+  };
   
   useEffect(() => {
     const fetchAnalytics = async () => {
@@ -126,7 +136,7 @@ const Dashboard = () => {
                 </div>
                 <div className="col-md-4">
                   <div className="p-3 border rounded mb-3">
-                    <h2 className="text-info">{analytics.stats.get_qr_analytics.last_scan ? new Date(analytics.stats.get_qr_analytics.last_scan).toLocaleString() : 'N/A'}</h2>
+                    <h2 className="text-info">{formatDate(analytics.stats.get_qr_analytics.last_scan)}</h2>
                     <p className="mb-0">Last Scan</p>
                   </div>
                 </div>
