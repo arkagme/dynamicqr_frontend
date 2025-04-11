@@ -111,7 +111,7 @@ const Dashboard = () => {
               </div>
               <p><strong>ID:</strong> {analytics.qr.id}</p>
               <p><strong>Target URL:</strong> <a href={analytics.qr.target_url} target="_blank" rel="noopener noreferrer">{analytics.qr.target_url}</a></p>
-              <p><strong>Created:</strong> {new Date(analytics.qr.created_at).toLocaleString()}</p>
+              <p><strong>Created:</strong> {analytics.qr.created_at}</p>
               <p><strong>Logo Included:</strong> {analytics.qr.with_logo ? 'Yes' : 'No'}</p>
             </div>
           </div>
@@ -136,7 +136,7 @@ const Dashboard = () => {
                 </div>
                 <div className="col-md-4">
                   <div className="p-3 border rounded mb-3">
-                    <h2 className="text-info"> {new Date(analytics.stats.get_qr_analytics.last_scan).toLocaleString()}</h2>
+                    <h2 className="text-info">{analytics.stats.get_qr_analytics.last_scan}</h2>
                     <p className="mb-0">Last Scan</p>
                   </div>
                 </div>
