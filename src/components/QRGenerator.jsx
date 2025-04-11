@@ -71,10 +71,8 @@ const QRGenerator = () => {
         reject(new Error('QR Code reference not available'));
         return;
       }
-      
       const svg = qrRef.current;
       const svgData = new XMLSerializer().serializeToString(svg);
-      
 
       const canvas = document.createElement("canvas");
       canvas.width = 400;  
