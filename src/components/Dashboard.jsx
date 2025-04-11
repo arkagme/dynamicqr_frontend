@@ -136,7 +136,7 @@ const Dashboard = () => {
                 </div>
                 <div className="col-md-4">
                   <div className="p-3 border rounded mb-3">
-                    <h2 className="text-info">{formatDate(analytics.stats.get_qr_analytics.last_scan)}</h2>
+                    <h2 className="text-info"> {new Date(analytics.stats.get_qr_analytics.last_scan).toLocaleString()}</h2>
                     <p className="mb-0">Last Scan</p>
                   </div>
                 </div>
